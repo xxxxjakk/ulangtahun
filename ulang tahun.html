@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Buku Ucapan Ulang Tahun (GIF Version)</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Poppins', sans-serif;
+      background: #f3e5d0;
+      overflow-x: hidden;
+    }
+
+    .container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+    }
+
+    .book {
+      width: 320px;
+      height: 420px;
+      perspective: 2000px;
+      position: relative;
+    }
+
+    .page {
+      width: 100%;
+      height: 100%;
+      background: #fffdf6;
+      border-radius: 10px;
+      box-shadow: 0 5px 20px rgba(0,0,0,0.2);
+      position: absolute;
+      transform-origin: left;
+      transition: transform 1s;
+      overflow: hidden;
+    }
+
+    .page img {
+      width: 100%;
+      height: auto;
+      border-radius: 10px 10px 0 0;
+      object-fit: cover;
+    }
+
+    .page-content {
+      padding: 20px;
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: rgba(255,255,255,0.7); /* transparan agar GIF tetap kelihatan */
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      align-items: center;
+      text-align: center;
+    }
+
+    .page h2 {
+      font-size: 18px;
+      color: #5b4636;
+      margin-bottom: 10px;
+    }
+
+    .page p {
+      font-size: 14px;
+      color: #3a2f28;
+      line-height: 1.5;
+    }
+
+    .buttons {
+      margin-top: 20px;
+      display: flex;
+      gap: 15px;
+    }
+
+    button {
+      padding: 10px 20px;
+      background-color: #b37a52;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+
+    button:hover {
+      background-color: #946541;
+    }
+
+    .page:nth-child(1) { z-index: 7; }
+    .page:nth-child(2) { z-index: 6; }
+    .page:nth-child(3) { z-index: 5; }
+    .page:nth-child(4) { z-index: 4; }
+    .page:nth-child(5) { z-index: 3; }
+    .page:nth-child(6) { z-index: 2; }
+    .page:nth-child(7) { z-index: 1; }
+
+    .flipped {
+      transform: rotateY(-180deg);
+      z-index: 0 !important;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <div class="book" id="book">
+
+      <!-- 🌸 Halaman 1 -->
+      <div class="page">
+        <div class="page-content">
+          <img src="foto1.gif" alt="GIF pembuka romantis">
+          <h2>Happy Special Day 🎉</h2>
+          <p>Hai sayang.. hari ini bukan cuma harimu,
+             tapi juga hariku, karena aku bersyukur banget
+             bisa punya seseorang seindah kamu 💖</p>
+        </div>
+      </div>
+
+      <!-- 🌸 Halaman 2 -->
+      <div class="page">
+        <div class="page-content">
+          <img src="foto2.gif" alt="GIF ulang tahun bahagia">
+          <h2>Happy Birthday sayanag 💕</h2>
+          <p>Semoga semua yang kamu impikan bisa tercapai,
+             semoga setiap langkah Ama selalu disertai bahagia,
+             dan semoga aku bisa terus ada di situ — nemenin kamu. 💫</p>
+        </div>
+      </div>
+
+      <!-- 🌸 Halaman 3 -->
+      <div class="page">
+        <div class="page-content">
+          <img src="foto3.gif" alt="GIF kenangan manis bersama">
+          <p>kamu tau nggak?
+             Dunia ini terasa beda sejak ada kamu.
+             Nggak selalu mudah, tapi bareng kamu,
+             semuanya terasa lebih berarti 🤍</p>
+        </div>
+      </div>
+
+      <!-- 🌸 Halaman 4 -->
+      <div class="page">
+        <div class="page-content">
+          <img src="foto4.gif" alt="GIF penuh harapan dan cinta">
+          <p>Semoga hidup kamu penuh warna,
+			 penuh cinta, penuh tawa.
+			 Dan kalau boleh, aku pengin terus jadi
+			 bagian dari semua cerita itu  🌷</p>
+        </div>
+      </div>
+
+      <!-- 🌸 Halaman 5 -->
+      <div class="page">
+        <div class="page-content">
+          <img src="foto5.gif" alt="GIF cinta dan pelukan">
+          <p>I love you today, tomorrow,  
+          and every day after that 💗</p>
+        </div>
+      </div>
+
+      <!-- 🌸 Halaman 6 -->
+      <div class="page">
+        <div class="page-content">
+          <img src="foto6.gif" alt="GIF romantis penuh makna">
+          <p>Terima kasih udah selalu sabar dan bertahan.  
+          Kamu itu rumah buat aku 💕</p>
+        </div>
+      </div>
+
+      <!-- 🌸 Halaman 7 -->
+      <div class="page">
+        <div class="page-content">
+          <img src="foto7.gif" alt="GIF ucapan terima kasih manis">
+          <h2>Thank You 🤍</h2>
+          <p>Aku bersyukur bisa punya kamu di hidupku.  
+          Semoga cinta ini selalu bertumbuh 🌹</p>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="buttons">
+      <button id="prev">← Sebelumnya</button>
+      <button id="next">Berikutnya →</button>
+    </div>
+  </div>
+
+  <script>
+    const pages = document.querySelectorAll('.page');
+    const nextBtn = document.getElementById('next');
+    const prevBtn = document.getElementById('prev');
+    let current = 0;
+
+    nextBtn.addEventListener('click', () => {
+      if (current < pages.length) {
+        pages[current].classList.add('flipped');
+        current++;
+      }
+    });
+
+    prevBtn.addEventListener('click', () => {
+      if (current > 0) {
+        current--;
+        pages[current].classList.remove('flipped');
+      }
+    });
+  </script>
+
+</body>
+</html>
